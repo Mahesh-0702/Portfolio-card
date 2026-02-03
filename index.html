@@ -3,190 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahesh | Profile Card</title>
+    <title>Profile Card</title>
 
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", sans-serif;
-        }
-
         body{
-            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: rgba(41, 4, 154, 0.15);
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
         }
 
         .card{
-            width: 360px;
-            background: rgba(7, 141, 219, 0.15);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 30px 25px;
+            background-color: rgba(12, 191, 214, 0.6);
+            border-radius: 15px;
+            width: 350px;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-            animation: fadeUp 1s ease forwards;
-            color: #0fa8cf;
+            box-shadow: 0 8px 20px rgba(13, 13, 13, 0.2);
+            animation: fadeIn 1s ease forwards;
         }
 
         .card img{
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.6);
+            border: 4px solid black;
             object-fit: cover;
+            animation: popIn 0.8s ease forwards;
             cursor: pointer;
-            transition: transform 0.4s;
         }
 
-        .card img:hover{
-            transform: scale(1.1);
+        .card h2{
+            margin: 15px 0 5px 0;
+            font-size: 22px;
+            color: black;
         }
 
-        h2{
-            margin-top: 15px;
-            font-size: 24px;
-            letter-spacing: 1px;
-        }
-
-        h4{
-            margin: 8px 0 18px;
-            font-weight: 400;
-            font-size: 14px;
+        .card h4{
+            margin: 0 0 15px 0;
+            font-weight: normal;
             color: #e0d9ff;
         }
 
-        p{
+        .card p{
             font-size: 14px;
-            line-height: 1.6;
-            color: #070000;
-            margin-bottom: 22px;
+            color: #f1f1f1;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .skills{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
 
         .skills span{
-            padding: 6px 14px;
-            border-radius: 20px;
+            background-color: brown;
+            color: whitesmoke;
+            padding: 5px 10px;
+            border-radius: 12px;
             font-size: 12px;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            color: #333;
+            transition: transform 0.3s, background-color 0.3s;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .skills span:hover{
-            transform: translateY(-4px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.25);
-        }
-
-        .buttons{
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .buttons button{
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            color: #fff;
-            background: linear-gradient(135deg, #43e97b, #38f9d7);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .buttons button:last-child{
-            background: linear-gradient(135deg, #fa709a, #fee140);
-            color: #333;
-        }
-
-        .buttons button:hover{
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transform: scale(1.1);
+            background-color: darkgreen;
         }
 
         .footer{
-            font-size: 12px;
-            opacity: 0.85;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
         }
 
-        @keyframes fadeUp{
-            from{
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to{
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .footer button{
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-contact{
+            background-color: rgb(71, 136, 5);
+            color: white;
+        }
+
+        .btn-contact:hover{
+            background-color: darkmagenta;
+            transform: scale(1.05);
+        }
+
+        .btn-cv{
+            background-color: rgb(208, 10, 132);
+            color: darkcyan;
+        }
+
+        .btn-cv:hover{
+            background-color: rgb(16, 236, 137);
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn{
+            from{opacity: 0; transform: translateY(20px);}
+            to{opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes popIn{
+            from{opacity: 0; transform: scale(0.5);}
+            to{opacity: 1; transform: scale(1);}
         }
     </style>
 </head>
 
 <body>
 
-    <div class="card">
-        <img src="mahesh.jpeg" alt="Profile Photo">
+<div class="card">
+    <img src="mahesh.jpeg" alt="Profile Photo">
 
-        <h2>Mahesh N</h2>
-        <h4>Bachelor of Computer Applications</h4>
+    <h2>Mahesh N</h2>
+    <h4>BACHELOR OF COMPUTER APPLICATION</h4>
 
-        <p>
-            Computer Science student passionate about building clean, impactful
-            technologies that solve real-world problems and improve everyday life.
-        </p>
+    <p>
+        I am a Computer Science student at Sri Jagadguru Renukacharya College of
+        Arts, Science and Commerce. Learning new technologies always fascinates me.
+        I aspire to build technology that helps solve day-to-day problems.
+    </p>
 
-        <div class="skills">
-            <span>Python</span>
-            <span>C</span>
-            <span>HTML & CSS</span>
-            <span>Java</span>
-            <span>Machine Learning Basics</span>
-        </div>
-
-        <div class="buttons">
-            <button class="btn-contact">Contact</button>
-            <button class="btn-cv">Download CV</button>
-        </div>
-
-        <div class="footer">
-            © 2026 Mahesh N
-        </div>
+    <div class="skills">
+        <span>Python</span>
+        <span>C</span>
+        <span>HTML & CSS</span>
+        <span>Java</span>
+        <span>Machine Learning Fundamentals</span>
     </div>
 
-    <script>
-        document.querySelector(".btn-contact").addEventListener("click", () => {
-            alert("Contact Details:\n\nEmail: mahisiri1807@gmail.com\nPhone: 9606776307");
-        });
+    <div class="footer">
+        <button class="btn-contact">Contact Me</button>
+        <button class="btn-cv">Download CV</button>
+    </div>
+</div>
 
-        document.querySelector(".btn-cv").addEventListener("click", () => {
-            alert("CV download coming soon 🚀");
-        });
+<script>
+    document.querySelector(".btn-contact").addEventListener("click", function(){
+        alert("Contact Details:\n\nEmail: mahisiri1807@gmail.com\nPhone: 9606776307");
+    });
 
-        document.querySelectorAll(".skills span").forEach(skill => {
-            skill.addEventListener("click", () => {
-                alert("Skill: " + skill.innerText);
-            });
-        });
+    document.querySelector(".btn-cv").addEventListener("click", function(){
+        alert("CV download will start soon (demo).");
+    });
 
-        document.querySelector(".card img").addEventListener("click", () => {
-            alert("Welcome to my aesthetic portfolio ✨");
+    document.querySelectorAll(".skills span").forEach(function(skill){
+        skill.addEventListener("click", function(){
+            alert("Skill: " + this.innerText);
         });
-    </script>
+    });
+
+    document.querySelector(".card img").addEventListener("click", function(){
+        alert("Hello! Welcome to my portfolio 😊");
+    });
+</script>
 
 </body>
 </html>
